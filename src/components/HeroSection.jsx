@@ -1,10 +1,9 @@
 import { useEffect, useState} from "react";
-import { PhoneIcon } from "@heroicons/react/24/solid";
+import { PhoneIcon, BoltIcon } from "@heroicons/react/24/solid";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub, faInstagram, faReact, faCss3, faJs, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
-// Custom hook for typing animation
 function useTypewriter(text, speed = 20) {
   const [displayedText, setDisplayedText] = useState("");
   const [isComplete, setIsComplete] = useState(false);
@@ -24,11 +23,10 @@ function useTypewriter(text, speed = 20) {
   return { displayedText, isComplete };
 }
 
-// Reusable Button Component
 function HeroButton({ href, variant = "primary", children }) {
   const baseStyles = "rounded-full font-semibold transition-all duration-300 inline-flex items-center justify-center gap-2 active:scale-95";
   const variants = {
-    primary: "bg-lime-500 px-6 md:px-7 py-2.5 md:py-3 text-slate-900 hover:bg-lime-400 hover:shadow-lg hover:shadow-lime-400/50 hover:scale-105",
+    primary: "bg-lime-500 px-6 md:px-7 py-2.5 md:py-3 text-slate-900 hover:bg-lime-400 hover:shadow-lg hover:shadow-lime-400/20 hover:scale-105",
     secondary: "bg-slate-900 border border-lime-500 px-6 md:px-7 py-2.5 md:py-3 text-lime-400 hover:bg-lime-500/10 hover:border-lime-400 hover:text-lime-300 hover:scale-105"
   };
 
@@ -39,7 +37,6 @@ function HeroButton({ href, variant = "primary", children }) {
   );
 }
 
-// Floating Social Icon Component
 function FloatingIcon({ icon, position, delay }) {
   return (
     <div
@@ -54,7 +51,6 @@ function FloatingIcon({ icon, position, delay }) {
   );
 }
 
-// Profile Visual Component - Responsivo
 function ProfileVisual() {
   return (
     <div className="relative w-full flex justify-center items-center mt-12 md:mt-0 md:h-96">
@@ -87,10 +83,8 @@ function ProfileVisual() {
         }
       `}</style>
 
-      {/* Animated gradient blob background */}
       <div className="absolute w-60 h-60 md:w-80 md:h-80 bg-gradient-to-br from-lime-500/20 via-amber-400/20 to-lime-500/20 rounded-full blur-3xl animate-pulse"></div>
 
-      {/* Floating icons - Hidden on mobile */}
       <div className="hidden lg:block">
         <FloatingIcon 
           icon={<FontAwesomeIcon icon={faReact} className="w-6 h-6 md:w-8 md:h-8 text-lime-400" />}
@@ -109,23 +103,18 @@ function ProfileVisual() {
         />
       </div>
 
-      {/* Profile circle with optimized image handling */}
       <div className="w-72 h-72 md:w-72 md:h-72 relative z-10 rounded-full overflow-hidden shadow-2xl" style={{ animation: "fadeInScale 0.8s ease-out" }}>
-        {/* Gradient border effect */}
         <div className="absolute inset-0 rounded-full border-2 border-lime-500/40 pointer-events-none z-20"></div>
         
-        {/* Background gradient fallback */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-900"></div>
         
-        {/* Image container */}
         <img 
-          src="sua-foto.jpg" 
+          src="fotodeperfil.jpg" 
           alt="Juliana Jacinto" 
           className="w-full h-full object-cover"
           loading="lazy"
         />
         
-        {/* Fallback placeholder */}
         <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-mono text-xs md:text-sm">
           <div className="text-center">
             <p className="text-lime-400 mb-2">📸</p>
@@ -145,7 +134,6 @@ export default function HeroSection() {
     <>
       <section className="relative min-h-screen md:min-h-[720px] flex items-center justify-center bg-gradient-to-b from-slate-950 via-slate-900 to-lime-800 px-6 sm:px-6 py-16 md:py-16 overflow-hidden pt-20 md:pt-32" id="home">
         
-        {/* Decorative dot pattern background */}
         <div className="absolute inset-0 z-0 pointer-events-none opacity-10 md:opacity-15">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -161,7 +149,6 @@ export default function HeroSection() {
           
           {/* Text Content */}
           <div className="space-y-4 md:space-y-6 animate-fadeIn">
-            {/* Name */}
             <div>
               <h1 className="text-5xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
                 <span className="bg-gradient-to-r from-lime-400 to-emerald-400 bg-clip-text text-transparent block">
@@ -189,6 +176,7 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
               <HeroButton href="#projetos" variant="primary">
                 Ver Projetos
+                <BoltIcon className="h-4 w-4" />
               </HeroButton>
 
               <HeroButton href="#contato" variant="secondary">
@@ -197,7 +185,7 @@ export default function HeroSection() {
               </HeroButton>
             </div>
 
-            {/* Social Links - Icon Only */}
+            {/* Social Links */}
             <div className="pt-4 md:pt-6 border-t border-lime-700">
               <div className="flex gap-4 md:gap-6">
                 <a
@@ -255,6 +243,8 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
+
+      <section className="p-2 bg-lime-500"></section>
     </>
   );
 }

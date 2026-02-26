@@ -80,9 +80,10 @@ function MobileMenu({ isOpen, onClose, activeSection }) {
             {/* Divider */}
             <div className="my-2 h-px bg-gradient-to-r from-transparent via-lime-500/30 to-transparent"></div>
 
-            {/* Download CV Button */}
+            {/* Baixar Currículo Button */}
             <a
-              href="/cv"
+              href="JulianaJacinto_currículo2026.pdf"
+              download target="_blank" rel="noopener noreferrer"
               onClick={onClose}
               className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-lime-500 to-lime-600 px-5 py-3.5 text-white font-semibold shadow-lg hover:shadow-xl hover:shadow-lime-500/50 hover:scale-105 transition-all duration-300 active:scale-95"
               style={{
@@ -90,7 +91,7 @@ function MobileMenu({ isOpen, onClose, activeSection }) {
               }}
             >
               <ArrowDownOnSquareIcon className="w-5 h-5" />
-              Download CV
+              Baixar currículo
             </a>
 
             {/* Social Links Section - Optional */}
@@ -244,11 +245,13 @@ export default function Navbar() {
           {/* Desktop CTA Button */}
           <div className="hidden lg:block">
             <a
-              href="/cv"
-              className="rounded-full bg-gradient-to-r from-lime-500 to-lime-600 px-6 py-2.5 text-white font-semibold shadow-lg hover:shadow-xl hover:shadow-lime-500/50 hover:scale-105 transition-all duration-300"
+              href="JulianaJacinto_currículo2026.pdf"
+              download target="_blank" rel="noopener noreferrer"
+              className="rounded-full inline-flex items-center gap-2 bg-gradient-to-r from-lime-500 to-lime-600 px-6 py-2.5 text-white font-semibold shadow-lg hover:shadow-xl hover:shadow-lime-500/20 hover:scale-105 transition-all duration-300"
               aria-label="Download currículo"
             >
-              Download CV
+              Baixar currículo
+              <ArrowDownOnSquareIcon  className="h-4 w-4" />
             </a>
           </div>
 

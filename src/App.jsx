@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/HeroSection";
 import About from "./components/AboutSection";
+import Skills from "./components/SkillSection";
 
 export default function App() {
   return (
@@ -8,6 +9,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <About />
+      <Skills />
     </div>
   )
 }
