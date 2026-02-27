@@ -247,7 +247,7 @@ export default function Navbar() {
             <a
               href="JulianaJacinto_currículo2026.pdf"
               download target="_blank" rel="noopener noreferrer"
-              className="rounded-full inline-flex items-center gap-2 bg-gradient-to-r from-lime-500 to-lime-600 px-6 py-2.5 text-white font-semibold shadow-lg hover:shadow-xl hover:shadow-lime-500/20 hover:scale-105 transition-all duration-300"
+              className="rounded-full inline-flex items-center gap-2 bg-lime-500 px-6 py-2.5 text-white font-semibold shadow-sm hover:shadow-lg hover:shadow-lime-500/20 hover:scale-105 transition-all duration-300"
               aria-label="Download currículo"
             >
               Baixar currículo
